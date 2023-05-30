@@ -25,6 +25,9 @@ Branches:
 -git branch: mostra em qual branch estamos;
 git branch [seção que quero]: cria a seção desejada a ser trabalhada;
 git checkout [nome da branch]: mudar para a branch que quero trabalhar;
+-git branch checkout -b lista: atalho de criação para uma nova branch;
+git merge [nome]: união de duas branches;
+
 
 
 Instruções que o Derick repassou:
