@@ -1,6 +1,41 @@
 -dir ou ls: para acesso ao diretório ou lista da pasta local;
+cd: comando que auxilia na navegação entre pastas;
 -git status: recebemos algumas informações que talvez não estejam tão claras, principalmente quando nos deparamos com termos como HEAD, working tree, index, etc.
 	HEAD: Estado atual do nosso código, ou seja, onde o Git os colocou
 	Working tree: Local onde os arquivos realmente estão sendo armazenados e editados
 	index: Local onde o Git armazena o que será commitado, ou seja, o local entre a working tree e o repositório Git em si.
 -git log: histórico de alterações;
+-git log --help: veja algumas das opções possíveis
+-git log -p: o git nos mostrou uma tela onde é possível rolar para baixo e para cima através das setas. Isso não é algo específico do git, mas sim do próprio terminal do sistema operacional. Quando finalizarmos a visualização do log, basta apertar a tecla q para voltar "ao normal" em nossa linha de comando.
+-git log --pretty="parametros de formatação"
+
+Ignorando arquivos:
+.gitignore: arquivo especial, nele você pode escrever as linhas que devem ser ignoradas na commit, ou seja, o terminal não vai mostra-las ou adiciona-las à commit;
+p.s: ao criar a .gitignore você pode fazer com que o git ignore certos linhas escritas, ao adicionar dentro do arquivo especial o que deve ser ignorado na commit. Contudo, ele também deve ser adicionado pelo git;
+*Não existe uma regra clara de quando adicionar um commit, o importante adicionar quando houver uma modificação significativa de trabalho feito no seu código;
+
+Repositório remoto:
+-cd ..: localização na pasta superior, se o seu arquivo estiver dentro de outra pasta ele saíra para pasta principal;
+mkdir name:criar uma pasta;
+-git init --bare: Com este comando nós criamos um repositório que não terá a working tree, ou seja, não conterá uma cópia dos nossos arquivos. Como o repositório servirá apenas como servidor, para que outros membros da equipe sincronizem seus trabalhos, poupamos espaço de armazenamento desta forma.
+-git remote add nome-repositorio caminho/para/o/repositorio: Desta forma teremos um link do nosso repositório local com o repositório remoto, que chamamos de nome-repositorio, que está armazenado em caminho/para/o/repositorio.
+-git push [repositorio] master: Desta forma, nós enviamos as alterações em nosso branch master (falaremos mais sobre branches já já) para o repositório remoto. Basta substituir [repositorio] pelo nome que demos ao repositório ao adicioná-lo. Já para trazer os dados que estiverem no repositório remoto, podemos utilizar o git pull [repositorio] master.
+
+Branches:
+-git branch: mostra em qual branch estamos;
+git branch [seção que quero]: cria a seção desejada a ser trabalhada;
+git checkout [nome da branch]: mudar para a branch que quero trabalhar;
+
+
+Instruções que o Derick repassou:
+git config --get remote.origin.url
+git config --list --show-origin
+-git config --global user.name "John Doe": configuração do nome de usuário referente;
+-git config --global user.email johndoe@example.com: configuração de email referente;
+git clone
+git checkout -b teste
+-git add .: adiciona todo o conteúdo referente a pasta;
+-git add .namedoarquivo: para adicionar um conteúdo específico ao commit;
+- commit -m "alteração no index.html": mensagem anexada referente a commit;
+git push
+git checkout main
