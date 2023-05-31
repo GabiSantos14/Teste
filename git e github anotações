@@ -22,12 +22,32 @@ mkdir name:criar uma pasta;
 -git push [repositorio] master: Desta forma, nós enviamos as alterações em nosso branch master (falaremos mais sobre branches já já) para o repositório remoto. Basta substituir [repositorio] pelo nome que demos ao repositório ao adicioná-lo. Já para trazer os dados que estiverem no repositório remoto, podemos utilizar o git pull [repositorio] master.
 
 Branches:
--git branch: mostra em qual branch estamos;
-git branch [seção que quero]: cria a seção desejada a ser trabalhada;
-git checkout [nome da branch]: mudar para a branch que quero trabalhar;
--git branch checkout -b lista: atalho de criação para uma nova branch;
-git merge [nome]: união de duas branches;
+	-git branch: mostra em qual branch estamos;
+	-git branch [seção que quero]: cria a seção desejada a ser trabalhada;
+	-git checkout [nome da branch]: mudar para a branch que quero trabalhar;
+	-git branch checkout -b lista: atalho de criação para uma nova branch;
+	-git merge [nome]: união de duas branches;
+	-git checkout master e git merge titulo
+	-git rebase titulo: semelhante a git merge em funcionalidade;
 
+-git checkout --[arquivo]: desfazer ou descartar uma alteração;
+-git reset: depois de adicioná-las, mas antes de commitá-las
+-git reset HEAD [arquivo]:  trazer o arquivo de volta para a HEAD do projeto (remover do stage, que é o que será enviado para o commit);
+-git revert [rash copiado do commit]: desfaz a alteração de algo já commitado;
+
+Guardar alterações:
+	-git stash: guarda uma alteração temporariamente para salvar depois;
+	-git stash list: coloca na lista;
+	-git stash pop: retira da lista para, enfim, adicionar a commit alterada;
+
+Viajando no tempo:
+	-git log checkout [numero referente a commit]: com esse comando você pode retornar a uma adição que queira retirar do projeto ou manter, essa opção abre um branch desanexado do branch principal;
+
+
+*Desta forma colocaremos o HEAD na branch master, ou seja, faremos com que o nosso código esteja no estado que o deixamos com o último commit na master. Depois, uniremos o trabalho da branch titulo com a branch atual (master).
+
+-qual a diferença entre os comandos rebase e merge?
+Com isso, evitamos os commits de merge. Há uma longa discussão sobre o que é "melhor": rebase ou merge. Estude, pesquise, e tire suas próprias conclusões. Aqui tem um artigo (de milhares outros) que cita o assunto: https://medium.com/datadriveninvestor/git-rebase-vs-merge-cc5199edd77c.
 
 
 Instruções que o Derick repassou:
